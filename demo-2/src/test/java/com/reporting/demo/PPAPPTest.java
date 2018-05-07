@@ -33,13 +33,13 @@ public class PPAPPTest {
 		
 		header.setDateTimestamp(new Date());
 		header.setChannel("ECL");
-		header.setCountry("PL");
+		header.setCountry("UK");
 		header.setUUID("weqwewe231231");
 		
-		body.setFwLogId("sdfsd").setPPName("ECRM");
+		body.setFwLogId("sdfsd").setPPName("FT");
 		
 		PSLog log = new PSLog();
-		log.setActionId("RMND").setCitiUUID("dsfsdf").setFunctionId("RMND")
+		log.setActionId("FXTX").setCitiUUID("dsfsdf").setFunctionId("FXTX")
 			.setHost("SIT").setStartTime(new Date()).setEndTime(new Date()).setTimeTaken("121");
 		List<PSLog> logs = new ArrayList<>();
 		logs.add(log);
@@ -60,6 +60,6 @@ public class PPAPPTest {
 	public void testFind() {
 		List<Rq> rqs = mongoTemplate.findAll(Rq.class);
 		rqs.forEach(r-> System.out.println(r));
-		assertEquals(1, rqs.size());
+		assertEquals(2, rqs.size());
 	}
 }
